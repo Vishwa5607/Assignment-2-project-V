@@ -71,6 +71,13 @@ static void printStudents(const std::vector<STUDENT_DATA>& students)
 int main()
 {
     std::vector<STUDENT_DATA> students;
+
+#ifdef PRE_RELEASE
+    std::cout << "Running PRE-RELEASE source code." << std::endl;
+#else
+    std::cout << "Running STANDARD source code." << std::endl;
+#endif
+
     loadStandardData("StudentData.txt", students);
 
 #ifdef _DEBUG
